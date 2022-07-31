@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthRoutes } from "../auth/routes/AuthRoutes";
+import { FlowRoutes } from "../flow/routes/FlowRoutes";
 import { useCheckAuth } from "../hooks/useCheckAuth";
 import { Loading } from "../ui/components";
 
