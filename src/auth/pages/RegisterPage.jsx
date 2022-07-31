@@ -62,9 +62,9 @@ export const RegisterPage = () => {
         <Grid container>
           <Grid item xs={12} sx={{ mt: 2 }}>
             <TextField
-              label="Nombre"
+              label="Name"
               type="text"
-              placeholder="Nombre"
+              placeholder="My name is.."
               fullWidth
               name="displayName"
               value={displayName}

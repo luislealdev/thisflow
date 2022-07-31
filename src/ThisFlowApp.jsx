@@ -1,7 +1,10 @@
-import { AppRoutes } from "./routes/AppRoutes"
+import { AppRoutes } from "./routes/AppRoutes";
+import { AppTheme } from "./theme/AppTheme";
 
 export const ThisFlowApp = () => {
   return (
-    <AppRoutes/>
-  )
-}
+    <AppTheme>
+      <AppRoutes />
+    </AppTheme>
+  );
+};
