@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { authSlice } from './auth'
-import { journalSlice } from './journal'
+import { flowSlice } from './flow'
 
 export const store = configureStore({
   reducer: {
     auth: authSlice.reducer,
-    journal: journalSlice.reducer,
+    flow: flowSlice.reducer,
   },
 })
