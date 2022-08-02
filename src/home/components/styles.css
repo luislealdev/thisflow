@@ -1,5 +1,6 @@
 /* From uiverse.io by @bhaveshxrawat */
 .card {
+    text-align: center;
     width: 100vw;
     height: 80vh;
     background: #440991;
@@ -10,17 +11,19 @@
     overflow: hidden;
 }
 
-.card h1 {
-    z-index: 1;
+.card h1{
+    font-family: monospace;
+    font-weight:900;
     color: white;
-    font-size: 3em;
+    font-size: 6em;
+}
+.card p{
+    margin-top: -50px;
+    font-family: monospace;
+    color:whitesmoke;
 }
 
-.spaceAnimation {
-    z-index: 1;
-}
-
-.card::before {
+/* .card::before {
     content: '';
     position: absolute;
     width: 10vw;
@@ -28,9 +31,9 @@
     height: 130%;
     animation: rotBGimg 5s linear infinite;
     transition: all 0.2s linear;
-}
+} */
 
-@keyframes rotBGimg {
+/* @keyframes rotBGimg {
     from {
         transform: rotate(0deg);
     }
@@ -38,7 +41,7 @@
     to {
         transform: rotate(360deg);
     }
-}
+} */
 
 .card::after {
     content: '';
@@ -46,4 +49,21 @@
     background: #440991;
     inset: 5px;
     border-radius: 15px;
+    z-index: -1;
 }
+
+
+@media (max-width: 600px) {
+    .card{
+        height: 75vh;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .card h1{
+        font-family: monospace;
+        font-weight:900;
+        font-size: 4em;
+        margin-top: -60px;
+    }
+    
+  }

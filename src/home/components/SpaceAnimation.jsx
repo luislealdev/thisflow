@@ -10,7 +10,7 @@ export const SpaceAnimation = () => {
           src='https://assets6.lottiefiles.com/packages/lf20_euaveaxu.json'
           background="transparent"
           speed="1"
-          style={{ height: "300px", width: "300px", zIndex:"1" }}
+          style={{ height: "500px", width: "500px"}}
         />
   )
 }

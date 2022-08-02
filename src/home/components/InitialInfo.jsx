@@ -5,8 +5,13 @@ export const InitialInfo = () => {
   return (
     <>
       <div className="card">
-        {/* <h1>This Flow</h1> */}
-        <SpaceAnimation/>
+      <div>
+          <SpaceAnimation />
+        </div>
+        <div>
+          <h1>THIS FLOW</h1>
+          <p>Your personal artist website</p>
+        </div>
       </div>
     </>
   );
