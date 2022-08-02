@@ -24,51 +24,44 @@ export const ImageGallery = () => {
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1549388604-817d15aa0110',
-    title: 'Bed',
+    img: 'src/home/assets/img/1.jpeg',
+    title: 'Skrillex',
   },
   {
-    img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
-    title: 'Books',
+    img: 'src/home/assets/img/2.jpeg',
+    title: 'Skrillex',
   },
   {
-    img: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6',
-    title: 'Sink',
+    img: 'src/home/assets/img/3.png',
+    title: 'Skrillex',
   },
   {
-    img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
-    title: 'Kitchen',
+    img: 'src/home/assets/img/4.png',
+    title: 'Skrillex',
   },
   {
-    img: 'https://images.unsplash.com/photo-1588436706487-9d55d73a39e3',
-    title: 'Blinds',
+    img: 'src/home/assets/img/5.jpeg',
+    title: 'Skrillex',
   },
   {
-    img: 'https://images.unsplash.com/photo-1574180045827-681f8a1a9622',
-    title: 'Chairs',
+    img: 'src/home/assets/img/6.jpeg',
+    title: 'Skrillex',
   },
   {
-    img: 'https://images.unsplash.com/photo-1530731141654-5993c3016c77',
-    title: 'Laptop',
+    img: 'src/home/assets/img/7.jpeg',
+    title: 'Skrillex',
   },
   {
-    img: 'https://images.unsplash.com/photo-1481277542470-605612bd2d61',
-    title: 'Doors',
+    img: 'src/home/assets/img/8.jpeg',
+    title: 'Skrillex',
   },
   {
-    img: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7',
-    title: 'Coffee',
+    img: 'src/home/assets/img/9.jpeg',
+    title: 'Skrillex',
   },
   {
-    img: 'https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee',
-    title: 'Storage',
+    img: 'src/home/assets/img/10.jpeg',
+    title: 'Skrillex',
   },
-  {
-    img: 'https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62',
-    title: 'Candle',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4',
-    title: 'Coffee table',
-  },
+
 ];

@@ -5,3 +5,4 @@ export * from './MediaControlCard';
 export * from './Donations';
 export * from './InitialInfo';
 export * from './SpaceAnimation';
+export * from './AvatarImg';
