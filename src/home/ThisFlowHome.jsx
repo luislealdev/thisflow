@@ -49,7 +49,7 @@ export const ThisFlowHome = () => {
           </h5>
           <div className="songs">
           <MediaControlCard songName="Where Are Ü Now" authors="Diplo, Jack Ü & Skrillex" img="src/home/assets/img/whereareu.jpg"/>
-          <MediaControlCard songName="Bangarang" authors="Skrillex" img="src/home/assets/img/idg.jpeg"/>
+          <MediaControlCard songName="In Da Getto" authors="J Balvin & Skrillex" img="src/home/assets/img/idg.jpeg"/>
           <MediaControlCard songName="Purple Lamborghini" authors="Skrillex & Rick Ross" img="src/home/assets/img/plam.jpeg"/>
           </div>
 
