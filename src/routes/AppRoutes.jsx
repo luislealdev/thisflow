@@ -20,8 +20,8 @@ export const AppRoutes = () => {
       )} */}
 
       <Route path="/home" element={<ThisFlowHome/>}/>
-      {/* <Route path="/*" element={<Navigate to="/auth/login" />} /> */}
-      <Route path="/*" element={<Navigate to="/home" />} />
+      <Route path="/*" element={<Navigate to="/auth/login" />} />
+      {/* <Route path="/*" element={<Navigate to="/home" />} /> */}
     </Routes>
   );
 };

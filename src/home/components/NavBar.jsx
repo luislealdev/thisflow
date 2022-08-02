@@ -11,6 +11,8 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
+import { Link, Link as RouterLink } from "react-router-dom";
+
 const pages = ['Home', 'About', 'Donations'];
 
 export const NavBar = () => {
@@ -115,9 +117,11 @@ export const NavBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-           <Typography>
+          <Link component={RouterLink} to="/auth/login" style={{textDecoration: "none"}} >
+           <Typography sx={{color:"white"}}>
             Login
            </Typography>
+           </Link>
           </Box>
         </Toolbar>
       </Container>
