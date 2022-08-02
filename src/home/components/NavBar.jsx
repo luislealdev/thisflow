@@ -117,7 +117,7 @@ export const NavBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-          <Link component={RouterLink} to="/auth/login" style={{textDecoration: "none"}} >
+          <Link component={RouterLink} to="/flow" style={{textDecoration: "none"}} >
            <Typography sx={{color:"white"}}>
             Login
            </Typography>

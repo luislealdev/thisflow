@@ -16,6 +16,7 @@ import {
 } from "../../store/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { useMemo } from "react";
+import { NavBar } from "../../home/components";
 
 const formData = {
   email: "",
@@ -39,7 +40,7 @@ export const LoginPage = () => {
     dispatch(startGoogleSignIn());
   };
 
-  return (
+  return (<>
     <AuthLayout title="Login">
       <form
         onSubmit={onSubmit}
@@ -102,12 +103,13 @@ export const LoginPage = () => {
           </Grid>
 
           <Grid container direction="row" justifyContent="end">
-            <Link component={RouterLink} color="inherit" to="/auth/register">
+            <Link component={RouterLink} color="inherit" to="/flow/register">
                Create an account
             </Link>
           </Grid>
         </Grid>
       </form>
     </AuthLayout>
+    </>
   );
 };

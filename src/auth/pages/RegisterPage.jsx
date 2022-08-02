@@ -12,6 +12,7 @@ import { useForm } from "../../hooks/useForm";
 import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startCreatingNewUserWithEmailPassword } from "../../store/auth/thunks";
+import { NavBar } from "../../home/components";
 
 const initialForm = {
   email: "",
@@ -54,6 +55,7 @@ export const RegisterPage = () => {
   };
 
   return (
+
     <AuthLayout title="Register">
       <form
         onSubmit={onSubmit}
@@ -123,7 +125,7 @@ export const RegisterPage = () => {
 
           <Grid container direction="row" justifyContent="end">
             <Typography sx={{ mr: 1 }}>Already have an account?</Typography>
-            <Link component={RouterLink} color="inherit" to="/auth/login">
+            <Link component={RouterLink} color="inherit" to="/flow/login">
               login
             </Link>
           </Grid>
