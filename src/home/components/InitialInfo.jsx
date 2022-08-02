@@ -1,10 +1,13 @@
-import React from "react";
+import { SpaceAnimation } from "./SpaceAnimation";
+import "./styles.css";
 
 export const InitialInfo = () => {
   return (
     <>
-      <h1>This Flow</h1>
-      <h3>Your personal artist website</h3>
+      <div className="card">
+        {/* <h1>This Flow</h1> */}
+        <SpaceAnimation/>
+      </div>
     </>
   );
 };
