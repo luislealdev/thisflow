@@ -41,6 +41,9 @@
     font-weight: 900;
     text-decoration:underline;
 }
+.songs{
+    display: flex;
+}
 
 /* From uiverse.io by @bhaveshxrawat */
 .card {
@@ -98,6 +101,9 @@
 
 
 @media (max-width: 600px) {
+    .songs{
+        display: grid;
+    }
     .card {
         height: 75vh;
         display: grid;
@@ -110,5 +116,6 @@
         font-weight: 900;
         font-size: 4em;
     }
+
 
 }

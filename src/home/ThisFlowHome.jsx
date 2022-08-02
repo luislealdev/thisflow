@@ -47,13 +47,19 @@ export const ThisFlowHome = () => {
           <h5>
             Let your fans <span>play your music</span> from the website{" "}
           </h5>
-          <MediaControlCard />
+          <div className="songs">
+          <MediaControlCard songName="Where Are Ü Now" authors="Diplo, Jack Ü & Skrillex" img="src/home/assets/img/whereareu.jpg"/>
+          <MediaControlCard songName="Bangarang" authors="Skrillex" img="src/home/assets/img/idg.jpeg"/>
+          <MediaControlCard songName="Purple Lamborghini" authors="Skrillex & Rick Ross" img="src/home/assets/img/plam.jpeg"/>
+          </div>
+
+
           <h5>
             Add your <span>social media</span>
           </h5>
           <SocialMedia/>
 
-          <h6>Help us to be better!</h6>
+
           <Donations />
         </div>
       </div>

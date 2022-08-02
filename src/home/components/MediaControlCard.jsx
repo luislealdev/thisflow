@@ -10,7 +10,7 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 
-export default function MediaControlCard() {
+export default function MediaControlCard({songName, authors, img}) {
   const theme = useTheme();
 
   return (
@@ -18,10 +18,10 @@ export default function MediaControlCard() {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
-          Where Are Ü Now
+          {songName}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" component="div">
-          Diplo, Jack Ü y Skrillex
+          {authors}
           </Typography>
         </CardContent>
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
@@ -39,8 +39,8 @@ export default function MediaControlCard() {
       <CardMedia
         component="img"
         sx={{ width: 151 }}
-        image="src/home/assets/img/whereareu.jpg"
-        alt="Live from space album cover"
+        image={img}
+        alt={songName}
       />
     </Card>
   );
