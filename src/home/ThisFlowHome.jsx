@@ -17,8 +17,9 @@ export const ThisFlowHome = () => {
   return (
     <>
       <NavBar />
+      <div className="animate__animated animate__fadeIn">
       <InitialInfo />
-      <div className="bg-principal cool">
+      <div className="bg-principal cool ">
         <div className="bg-secondary margin-2 padding-2 not-margin-top border-radius center">
           <h5>
             Add a <span>profile picture</span> and <span>describe you</span>
@@ -65,6 +66,7 @@ export const ThisFlowHome = () => {
       </div>
 
       <FloatButton />
+      </div>
     </>
   );
 };
