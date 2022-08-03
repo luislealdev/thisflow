@@ -13,7 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 
 import { Link, Link as RouterLink } from "react-router-dom";
 
-const pages = ["Home", "About", "Donations"];
+const pages = ["Home", "About", "Donations", "Follow"];
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

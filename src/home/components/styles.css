@@ -8,11 +8,14 @@
 }
 
 .bg-secondary {
-    background-color: #853BE6;
+    background-color: #d3b3fd;
 }
 
 .margin-2 {
     margin: 2vw;
+}
+.mt-5{
+    margin: 2vh;
 }
 
 .not-margin-top {

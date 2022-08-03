@@ -31,7 +31,7 @@ export const RegisterPage = () => {
   const formValidations = {
     email: [(value) => value.includes("@"), "Please enter a valid email"],
     password: [(value) => value.length >= 6, "Please enter a valid password"],
-    displayName: [(value) => value.length > 1, "Username is required"],
+    displayName: [(value) => value.length > 1, "Name is required"],
   };
 
   const {
