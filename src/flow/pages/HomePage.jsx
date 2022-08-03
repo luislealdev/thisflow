@@ -5,11 +5,17 @@ import MediaControlCard from "../../home/components/MediaControlCard";
 import { SocialMedia } from "../../home/components/SocialMedia";
 import SaveIcon from "@mui/icons-material/Save";
 import "../../home/components/styles.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import LogoutIcon from "@mui/icons-material/Logout";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { startLogoutFirebase } from "../../store/auth/thunks";
 
 export const HomePage = () => {
+  const dispatch = useDispatch();
 
-  const {displayName} = useSelector((state) => state.auth); 
+  const onLogout = () => {
+    return dispatch(startLogoutFirebase());
+  };
 
   return (
     <>
@@ -26,7 +32,12 @@ export const HomePage = () => {
               <Grid item xs={4}>
                 <Button color="secondary">
                   <SaveIcon />
-                  Guardar
+                  Guardar cambios
+                </Button>
+              </Grid>
+              <Grid item xs={4}>
+                <Button color="secondary" onClick={onLogout}>
+                  <LogoutIcon />
                 </Button>
               </Grid>
             </Grid>
@@ -38,31 +49,18 @@ export const HomePage = () => {
               alignItems="center"
               justifyContent="center"
             >
-              <Grid item xs={3}>
+              <Grid>
                 <AvatarImg />
+                <Button>Change image</Button>
               </Grid>
-
               <Grid item xs={3}>
-              <TextField
+                <TextField
                   type="text"
                   variant="filled"
                   fullWidth
-                  placeholder="Enter username"
-                  label="Username"
-                  sx={{ border: "none", mb: 1, mt: 2 }}
-                  name="title"
-                  // value={title}
-                  // onChange={onInputChange}
-                />
-              </Grid>
-              <Grid item xs={3}>
-              <TextField
-                  type="text"
-                  variant="filled"
-                  fullWidth
-                  placeholder="Enter username"
-                  label="Username"
-                  sx={{ border: "none", mb: 1, mt: 2 }}
+                  placeholder="Skrillex Tomorrowland"
+                  label="Name"
+                  sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
                   name="title"
                   // value={title}
                   // onChange={onInputChange}
@@ -73,19 +71,40 @@ export const HomePage = () => {
                   type="text"
                   variant="filled"
                   fullWidth
-                  placeholder="Enter username"
+                  placeholder="Skrillex"
                   label="Username"
-                  sx={{ border: "none", mb: 1, mt: 2 }}
+                  sx={{ border: "none", mb: 1, mt: 2, width: "70vw" }}
                   name="title"
                   // value={title}
                   // onChange={onInputChange}
                 />
               </Grid>
+              <Grid item xs={3}>
+                <TextField
+                  type="text"
+                  variant="filled"
+                  multiline
+                  fullWidth
+                  placeholder="Life is good..."
+                  label="Phrase"
+                  sx={{ border: "none", mb: 1, mt: 2, width: "70vw" }}
+                  minRows={3}
+                  name="title"
+                  // value={title}
+                  // onChange={onInputChange}
+                />
+              </Grid>
+              <Grid item xs={4}>
+                <IconButton color="secondary">
+                  <CloudUploadIcon />
+                </IconButton>
+              </Grid>
+              Upload images
             </Grid>
 
-            <ImageGallery />
+            {/* <ImageGallery /> */}
 
-            <div className="songs">
+            {/* <div className="songs">
               <MediaControlCard
                 songName="Where Are Ü Now"
                 authors="Diplo, Jack Ü & Skrillex"
@@ -101,9 +120,7 @@ export const HomePage = () => {
                 authors="Skrillex & Rick Ross"
                 img="src/home/assets/img/plam.jpeg"
               />
-            </div>
-
-            <SocialMedia />
+            </div> */}
           </div>
         </div>
 
