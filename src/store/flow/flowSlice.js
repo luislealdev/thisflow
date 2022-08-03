@@ -1,22 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const flowSlice = createSlice({
-   name: 'flow',
-   initialState: {
-       isSaving: false,
-       profilePicture: "",
-       username: "",
-       phrase:"",
-       photos: [],
-       songs: [],
-       socialMedia: {},
-       streamingApps:{}
-
-   },
-   reducers: {
-     
-     }
+  name: "flow",
+  initialState: {
+    isSaving: false,
+    activeUser: {
+      profilePicture: "",
+      displayName:"",
+      username: "",
+      phrase: "",
+      photos: [],
+      songs: [],
+      socialMedia: {},
+      streamingApps: {},
+    },
+  },
+  reducers: {},
 });
 
 // Action creators are generated for each case reducer function
-export const {  } = flowSlice.actions;
+export const {} = flowSlice.actions;

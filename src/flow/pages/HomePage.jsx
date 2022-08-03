@@ -1,4 +1,11 @@
-import { Button, Grid, IconButton, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  Grid,
+  IconButton,
+  TextField,
+  Typography,
+  useFormControl,
+} from "@mui/material";
 import { AvatarImg, FloatButton, ImageGallery } from "../../home/components";
 import { DescriptionUserText } from "../../home/components/DescriptionUserText";
 import MediaControlCard from "../../home/components/MediaControlCard";
@@ -9,6 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import LogoutIcon from "@mui/icons-material/Logout";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { startLogoutFirebase } from "../../store/auth/thunks";
+import { useForm } from "../../hooks/useForm";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -16,6 +24,21 @@ export const HomePage = () => {
   const onLogout = () => {
     return dispatch(startLogoutFirebase());
   };
+
+  const { isSaving, activeUser } = useSelector((state) => state.flow);
+
+  const {
+    profilePicture,
+    displayName,
+    username,
+    phrase,
+    photos,
+    songs,
+    socialMedia,
+    streamingApps,
+    onInputChange,
+    formState,
+  } = useForm(activeUser);
 
   return (
     <>
@@ -55,32 +78,35 @@ export const HomePage = () => {
               </Grid>
               <Grid item xs={3}>
                 <TextField
+                  autoComplete="off"
                   type="text"
                   variant="filled"
                   fullWidth
                   placeholder="Skrillex Tomorrowland"
                   label="Name"
                   sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
-                  name="title"
-                  // value={title}
-                  // onChange={onInputChange}
+                  name="displayName"
+                  value={displayName}
+                  onChange={onInputChange}
                 />
               </Grid>
               <Grid item xs={3}>
                 <TextField
+                  autoComplete="off"
                   type="text"
                   variant="filled"
                   fullWidth
-                  placeholder="Skrillex"
+                  placeholder="skrillex"
                   label="Username"
                   sx={{ border: "none", mb: 1, mt: 2, width: "70vw" }}
-                  name="title"
-                  // value={title}
-                  // onChange={onInputChange}
+                  name="username"
+                  value={username}
+                  onChange={onInputChange}
                 />
               </Grid>
               <Grid item xs={3}>
                 <TextField
+                  autoComplete="off"
                   type="text"
                   variant="filled"
                   multiline
@@ -89,9 +115,9 @@ export const HomePage = () => {
                   label="Phrase"
                   sx={{ border: "none", mb: 1, mt: 2, width: "70vw" }}
                   minRows={3}
-                  name="title"
-                  // value={title}
-                  // onChange={onInputChange}
+                  name="phrase"
+                  value={phrase}
+                  onChange={onInputChange}
                 />
               </Grid>
               <Grid item xs={4}>

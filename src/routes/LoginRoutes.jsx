@@ -7,8 +7,6 @@ import { Loading } from "../ui/components";
 
 export const LoginRoutes = () => {
 
-  console.log('lol');
-
   const { status } = useCheckAuth();
 
   if (status == "checking") return <Loading />;
