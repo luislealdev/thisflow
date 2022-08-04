@@ -17,6 +17,9 @@ export const flowSlice = createSlice({
     },
   },
   reducers: {
+    setUser: (state, action) => {
+      state.activeUser = action.payload;
+    },
     setSaving: (state, action) => {
       state.isSaving = true;
     },
@@ -47,4 +50,4 @@ export const flowSlice = createSlice({
 }});
 
 // Action creators are generated for each case reducer function
-export const { setSaving, updatedUser, setActiveUser,clearUserInfo } = flowSlice.actions;
+export const { setSaving, updatedUser, setActiveUser,clearUserInfo,setUser } = flowSlice.actions;
