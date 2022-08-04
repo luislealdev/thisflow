@@ -17,12 +17,17 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { startLogoutFirebase } from "../../store/auth/thunks";
 import { useForm } from "../../hooks/useForm";
+import { startSavingInfo } from "../../store/flow";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
 
   const onLogout = () => {
     return dispatch(startLogoutFirebase());
+  };
+
+  const onSaveInfo = () => {
+    dispatch(startSavingInfo());
   };
 
   const { isSaving, activeUser } = useSelector((state) => state.flow);
@@ -53,9 +58,13 @@ export const HomePage = () => {
               sx={{ m: 2 }}
             >
               <Grid item xs={4}>
-                <Button color="secondary">
+                <Button
+                  color="secondary"
+                  onClick={onSaveInfo}
+                  disabled={isSaving}
+                >
                   <SaveIcon />
-                  Guardar cambios
+                  Save
                 </Button>
               </Grid>
               <Grid item xs={4}>
