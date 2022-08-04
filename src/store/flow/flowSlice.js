@@ -29,8 +29,22 @@ export const flowSlice = createSlice({
       state.activeUser = action.payload;
       state.savedMessage = `"${action.payload.username}" saved correctly.`;
     },
+    clearUserInfo: (state) =>{
+      state.isSaving= false,
+      state.savedMessage= "",
+      state.activeUser = {
+      profilePicture: "",
+      displayName:"",
+      username:"",
+      phrase:"",
+      photos:[],
+      songs:[],
+      socialMedia:{},
+      streamingApp:{},
+    }
   },
-});
+
+}});
 
 // Action creators are generated for each case reducer function
-export const { setSaving, updatedUser, setActiveUser } = flowSlice.actions;
+export const { setSaving, updatedUser, setActiveUser,clearUserInfo } = flowSlice.actions;
