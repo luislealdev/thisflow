@@ -17,7 +17,8 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { startLogoutFirebase } from "../../store/auth/thunks";
 import { useForm } from "../../hooks/useForm";
-import { startSavingInfo } from "../../store/flow";
+import { startSavingInfo, setActiveUser } from "../../store/flow";
+import { useEffect } from "react";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -44,6 +45,10 @@ export const HomePage = () => {
     onInputChange,
     formState,
   } = useForm(activeUser);
+
+  useEffect(() => {
+    dispatch(setActiveUser(formState));
+  }, [formState]);
 
   return (
     <>
