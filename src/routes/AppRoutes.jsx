@@ -7,13 +7,13 @@ import { Loading } from "../ui/components";
 import { LoginRoutes } from "./LoginRoutes";
 
 export const AppRoutes = () => {
-
-
   return (
     <Routes>
-      <Route path="/home" element={<ThisFlowHome/>}/>
-      <Route path="/flow/*" element={<LoginRoutes/>}/>
+      <Route path="/home" element={<ThisFlowHome />} />
+      <Route path="/flow/*" element={<LoginRoutes />} />
 
+      {/*Find user */}
+      <Route path="/:user" element={<h1>Hey</h1>} />
       {/* Redirect */}
       <Route path="/*" element={<Navigate to="/home" />} />
     </Routes>

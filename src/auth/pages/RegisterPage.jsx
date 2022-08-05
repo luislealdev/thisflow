@@ -22,7 +22,7 @@ const initialForm = {
 
 export const RegisterPage = () => {
   const [formSubmited, setFormSubmited] = useState(false);
-  
+
   const dispatch = useDispatch();
 
   const { status, errorMessage } = useSelector((state) => state.auth);
@@ -31,7 +31,38 @@ export const RegisterPage = () => {
   const formValidations = {
     email: [(value) => value.includes("@"), "Please enter a valid email"],
     password: [(value) => value.length >= 6, "Please enter a valid password"],
-    displayName: [(value) => value.length > 1, "Name is required"],
+    displayName: [
+      (value) =>
+        value.length > 5 &&
+        !value.includes(" ") &&
+        !value.includes("@") &&
+        !value.includes("/") &&
+        !value.includes("(") &&
+        !value.includes(")") &&
+        !value.includes("!") &&
+        !value.includes("|") &&
+        !value.includes('"') &&
+        !value.includes("·") &&
+        !value.includes("#") &&
+        !value.includes("$") &&
+        !value.includes("%") &&
+        !value.includes("&") &&
+        !value.includes("=") &&
+        !value.includes("?") &&
+        !value.includes("'") &&
+        !value.includes("¿") &&
+        !value.includes("¡") &&
+        !value.includes(";") &&
+        !value.includes(",") &&
+        !value.includes(":") &&
+        !value.includes("{") &&
+        !value.includes("}") &&
+        !value.includes("[") &&
+        !value.includes("]") &&
+        !value.includes("¨") &&
+        !value.includes("Ç"),
+      "Please enter a valid username (No spaces and no special icons)",
+    ],
   };
 
   const {
@@ -55,7 +86,6 @@ export const RegisterPage = () => {
   };
 
   return (
-
     <AuthLayout title="Register">
       <form
         onSubmit={onSubmit}
@@ -64,9 +94,9 @@ export const RegisterPage = () => {
         <Grid container>
           <Grid item xs={12} sx={{ mt: 2 }}>
             <TextField
-              label="Name"
+              label="Username"
               type="text"
-              placeholder="My name is.."
+              placeholder="skrillex"
               fullWidth
               name="displayName"
               value={displayName}

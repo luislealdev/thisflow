@@ -9,6 +9,7 @@ export const startLoadingUser = () => {
     const { uid } = getState().auth;
     if (!uid) throw new Error("El UID del usuario no existe");
     const user = await loadUser(uid);
+
     dispatch(setUser(user));
   };
 };

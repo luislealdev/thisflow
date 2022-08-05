@@ -35,7 +35,7 @@ export const ThisFlowHome = () => {
               justifyContent="center"
             >
               <Grid item xs={3}>
-                <AvatarImg />
+                <AvatarImg src="src/home/assets/img/skrillex.jpeg"/>
               </Grid>
 
               <Grid item xs={3}>

@@ -102,7 +102,6 @@ export const HomePage = () => {
                 onChange={onFileInputChange}
                 ref={inputUploadImageRef}
                 style={{ display: "none" }}
-                multiple
               />
               <Grid>
                 <AvatarImg src={activeUser.profilePicture}/>
