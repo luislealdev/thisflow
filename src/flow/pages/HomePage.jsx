@@ -105,7 +105,7 @@ export const HomePage = () => {
                 multiple
               />
               <Grid>
-                <AvatarImg />
+                <AvatarImg src={activeUser.profilePicture}/>
                 <Button
                   onClick={() => {
                     inputUploadImageRef.current.click();

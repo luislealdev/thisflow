@@ -1,10 +1,10 @@
 import { Avatar } from "@mui/material";
 
-export const AvatarImg = () => {
+export const AvatarImg = ({src=""}) => {
   return (
     <Avatar
       alt="Skrillex"
-      src="src/home/assets/img/skrillex.jpeg"
+      src={src}
       sx={{
         width: "30vh",
         height: "30vh",
