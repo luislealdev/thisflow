@@ -17,8 +17,12 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { startLogoutFirebase } from "../../store/auth/thunks";
 import { useForm } from "../../hooks/useForm";
-import { startSavingInfo, setActiveUser } from "../../store/flow";
-import { useEffect } from "react";
+import {
+  startSavingInfo,
+  setActiveUser,
+  startUploadingProfileImage,
+} from "../../store/flow";
+import { useEffect, useRef } from "react";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -49,6 +53,13 @@ export const HomePage = () => {
   useEffect(() => {
     dispatch(setActiveUser(formState));
   }, [formState]);
+
+  const inputUploadImageRef = useRef();
+
+  const onFileInputChange = ({ target }) => {
+    if (target.files == 0) return;
+    dispatch(startUploadingProfileImage(target.files));
+  };
 
   return (
     <>
@@ -86,9 +97,22 @@ export const HomePage = () => {
               alignItems="center"
               justifyContent="center"
             >
+              <input
+                type="file"
+                onChange={onFileInputChange}
+                ref={inputUploadImageRef}
+                style={{ display: "none" }}
+                multiple
+              />
               <Grid>
                 <AvatarImg />
-                <Button>Change image</Button>
+                <Button
+                  onClick={() => {
+                    inputUploadImageRef.current.click();
+                  }}
+                >
+                  Change image
+                </Button>
               </Grid>
               <Grid item xs={3}>
                 <TextField
