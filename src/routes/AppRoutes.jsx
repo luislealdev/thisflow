@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthRoutes } from "../auth/routes/AuthRoutes";
+import { UserPage } from "../flow/pages/UserPage";
 import { FlowRoutes } from "../flow/routes/FlowRoutes";
 import { ThisFlowHome } from "../home/ThisFlowHome";
 import { useCheckAuth } from "../hooks/useCheckAuth";
@@ -13,10 +14,10 @@ export const AppRoutes = () => {
       <Route path="/flow/*" element={<LoginRoutes />} />
 
       {/*Find user */}
-      <Route path="/:user" element={<h1>Hey</h1>} />
-      
+      <Route path="/:username" element={<UserPage/>} />
+
       {/* Redirect */}
-      <Route path="/*" element={<Navigate to="/home" />} />
+      {/* <Route path="/*" element={<Navigate to="/home" />} /> */}
     </Routes>
   );
 };
