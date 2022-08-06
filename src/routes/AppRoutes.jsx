@@ -17,7 +17,7 @@ export const AppRoutes = () => {
       <Route path="/:username" element={<UserPage/>} />
 
       {/* Redirect */}
-      {/* <Route path="/*" element={<Navigate to="/home" />} /> */}
+      <Route path="/*" element={<Navigate to="/home" />} />
     </Routes>
   );
 };
