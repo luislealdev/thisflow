@@ -1,19 +1,23 @@
-import React from 'react'
-import { Navigate, useParams } from 'react-router-dom';
+import React, { useEffect, useMemo } from "react";
+import { useDispatch } from "react-redux";
+import { Navigate, useParams } from "react-router-dom";
+import { loadUser } from "../../helpers/loadUser";
+import { startLoadingUsername } from "../../store/flow";
 
 export const UserPage = () => {
-
   const { username, ...others } = useParams();
+  const dispatch = useDispatch();
 
-  // const user = useMemo(()=>getHeroById(id), [id]) ;
+  useEffect(() => {
+    dispatch(startLoadingUsername(username));
+  }, [username])
+  
 
-  const user = undefined;
+  // const user = undefined;
 
-  if (user === undefined) {
+  if (username === undefined) {
     return <Navigate to="/home" />;
   }
 
-  return (
-    <div>UserPage</div>
-  )
-}
+  return <div>UserPage</div>;
+};

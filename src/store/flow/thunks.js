@@ -18,6 +18,15 @@ export const startLoadingUser = () => {
   };
 };
 
+export const startLoadingUsername = (username) => {
+  return async (dispatch, getState) => {
+    if (!username) throw new Error("El username del usuario no existe");
+    const user = await loadUser(username);
+
+    dispatch(setUser(user));
+  };
+};
+
 export const startSavingInfo = () => {
   return async (dispatch, getState) => {
     dispatch(setSaving());
