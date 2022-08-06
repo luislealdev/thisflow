@@ -8,7 +8,6 @@ export const flowSlice = createSlice({
     activeUser: {
       profilePicture: "",
       displayName: "",
-      username: "",
       phrase: "",
       photos: [],
       songs: [],

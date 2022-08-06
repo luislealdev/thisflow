@@ -9,7 +9,6 @@ export const authSlice = createSlice({
     displayName: null,
     photoURL: null,
     errorMessage: null,
-    
   },
   reducers: {
     login: (state, { payload }) => {

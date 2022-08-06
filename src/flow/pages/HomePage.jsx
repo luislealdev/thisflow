@@ -40,7 +40,6 @@ export const HomePage = () => {
   const {
     profilePicture,
     displayName,
-    username,
     phrase,
     photos,
     songs,
@@ -124,20 +123,6 @@ export const HomePage = () => {
                   sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
                   name="displayName"
                   value={displayName}
-                  onChange={onInputChange}
-                />
-              </Grid>
-              <Grid item xs={3}>
-                <TextField
-                  autoComplete="off"
-                  type="text"
-                  variant="filled"
-                  fullWidth
-                  placeholder="skrillex"
-                  label="Username"
-                  sx={{ border: "none", mb: 1, mt: 2, width: "70vw" }}
-                  name="username"
-                  value={username}
                   onChange={onInputChange}
                 />
               </Grid>

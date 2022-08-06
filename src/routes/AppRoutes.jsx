@@ -14,6 +14,7 @@ export const AppRoutes = () => {
 
       {/*Find user */}
       <Route path="/:user" element={<h1>Hey</h1>} />
+      
       {/* Redirect */}
       <Route path="/*" element={<Navigate to="/home" />} />
     </Routes>

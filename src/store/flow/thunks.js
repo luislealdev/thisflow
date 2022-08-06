@@ -6,9 +6,13 @@ import { setProfileImage, setSaving, setUser, updatedUser } from "./flowSlice";
 
 export const startLoadingUser = () => {
   return async (dispatch, getState) => {
-    const { uid } = getState().auth;
-    if (!uid) throw new Error("El UID del usuario no existe");
-    const user = await loadUser(uid);
+    // const { uid } = getState().auth;
+    // if (!uid) throw new Error("El UID del usuario no existe");
+    // const user = await loadUser(uid);
+
+    const { displayName } = getState().auth;
+    if (!displayName) throw new Error("El username del usuario no existe");
+    const user = await loadUser(displayName);
 
     dispatch(setUser(user));
   };
@@ -17,13 +21,15 @@ export const startLoadingUser = () => {
 export const startSavingInfo = () => {
   return async (dispatch, getState) => {
     dispatch(setSaving());
-    const { uid } = getState().auth;
+    // const { uid } = getState().auth;
+    const { displayName } = getState().auth;
+
     const { activeUser } = getState().flow;
 
     const userToFirestore = { ...activeUser };
     delete userToFirestore.id;
 
-    const userRef = doc(firebaseDB, `${uid}/info/`);
+    const userRef = doc(firebaseDB, `${displayName}/info/`); //Cambie uid por displayName
     await setDoc(userRef, userToFirestore, { merge: true });
     dispatch(updatedUser(activeUser));
   };
