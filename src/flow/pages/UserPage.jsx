@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router-dom";
 import { startLoadingUsername } from "../../store/flow";
 import { Loading } from "../../ui/components/Loading";
+import { UserPageInfo } from "./UserPageInfo";
 
 export const UserPage = () => {
   const { username, ...others } = useParams();
@@ -16,7 +17,7 @@ export const UserPage = () => {
 
   if (isLoading == false) {
     return activeUser.displayName != null ? (
-      <h1>{activeUser.displayName}</h1>
+      <UserPageInfo user={activeUser}/>
     ) : (
       <Navigate to="/home" />
     );

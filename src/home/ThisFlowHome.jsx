@@ -14,8 +14,6 @@ import { Grid } from "@mui/material";
 import { SocialMedia } from "./components/SocialMedia";
 
 export const ThisFlowHome = () => {
-
-
   return (
     <>
       <NavBar />
@@ -35,7 +33,7 @@ export const ThisFlowHome = () => {
               justifyContent="center"
             >
               <Grid item xs={3}>
-                <AvatarImg src="src/home/assets/img/skrillex.jpeg"/>
+                <AvatarImg src="src/home/assets/img/skrillex.jpeg" />
               </Grid>
 
               <Grid item xs={3}>

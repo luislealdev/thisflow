@@ -4,18 +4,22 @@
 }
 
 .bg-principal {
-    background-color: #440991;
+    /* background-color: #440991;  */
+    background-color: #853BE6;
+
 }
 
 .bg-secondary {
     background-color: #d3b3fd;
 }
 
+.bg-super-purple {
+    background-color: #440991;
+    margin: -2vh;
+}
+
 .margin-2 {
     margin: 2vw;
-}
-.mt-5{
-    margin: 2vh;
 }
 
 .not-margin-top {
@@ -33,18 +37,21 @@
 .center {
     text-align: center;
 }
-.cool h5{
+
+.cool h5 {
     font-family: monospace;
     color: whitesmoke;
     font-weight: 400;
-    font-size:x-large;
+    font-size: x-large;
     margin: 5vh;
 }
-.cool h5 span{
+
+.cool h5 span {
     font-weight: 900;
-    text-decoration:underline;
+    text-decoration: underline;
 }
-.songs{
+
+.songs {
     display: flex;
 }
 
@@ -104,9 +111,10 @@
 
 
 @media (max-width: 600px) {
-    .songs{
+    .songs {
         display: grid;
     }
+
     .card {
         height: 75vh;
         display: grid;
