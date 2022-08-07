@@ -15,7 +15,9 @@
 
 .bg-super-purple {
     background-color: #440991;
-    margin: -2vh;
+    margin-top: -2vh;
+    margin-bottom: -1vh;
+    width: 100vw;
 }
 
 .margin-2 {
@@ -109,6 +111,13 @@
     z-index: -1;
 }
 
+.credits{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: black;
+    width: 100vw;
+}
+
 
 @media (max-width: 600px) {
     .songs {
@@ -127,6 +136,8 @@
         font-weight: 900;
         font-size: 4em;
     }
-
+    .credits{
+        grid-template-columns: repeat(1,1fr);
+    }
 
 }

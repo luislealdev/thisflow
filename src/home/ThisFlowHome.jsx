@@ -6,6 +6,7 @@ import {
   NavBar,
   InitialInfo,
   AvatarImg,
+  Credits
 } from "./components";
 import MediaControlCard from "./components/MediaControlCard";
 import "../home/components/styles.css";
@@ -77,6 +78,7 @@ export const ThisFlowHome = () => {
 
         <FloatButton />
       </div>
+      <Credits/>
     </>
   );
 };
