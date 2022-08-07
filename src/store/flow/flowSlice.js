@@ -3,11 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 export const flowSlice = createSlice({
   name: "flow",
   initialState: {
+    isLoading: true,
     isSaving: false,
     savedMessage: "",
     activeUser: {
       profilePicture: "",
-      displayName: "",
+      displayName: null,
       phrase: "",
       photos: [],
       songs: [],
@@ -18,6 +19,10 @@ export const flowSlice = createSlice({
   reducers: {
     setUser: (state, action) => {
       state.activeUser = action.payload;
+      state.isSaving = false;
+    },
+    setLoading: (state, action) => {
+      state.isLoading = action.payload;
     },
     setSaving: (state, action) => {
       state.isSaving = true;
@@ -43,24 +48,32 @@ export const flowSlice = createSlice({
       // state.active.imagesUrls = [...action.payload];
       state.activeUser = {
         profilePicture: action.payload,
-      }
+      };
     },
-    clearUserInfo: (state) =>{
-      state.isSaving= false,
-      state.savedMessage= "",
-      state.activeUser = {
-      profilePicture: "",
-      displayName:"",
-      username:"",
-      phrase:"",
-      photos:[],
-      songs:[],
-      socialMedia:{},
-      streamingApp:{},
-    }
+    clearUserInfo: (state) => {
+      (state.isSaving = false),
+        (state.savedMessage = ""),
+        (state.activeUser = {
+          profilePicture: "",
+          displayName: "",
+          username: "",
+          phrase: "",
+          photos: [],
+          songs: [],
+          socialMedia: {},
+          streamingApp: {},
+        });
+    },
   },
-
-}});
+});
 
 // Action creators are generated for each case reducer function
-export const { setSaving, updatedUser, setActiveUser,clearUserInfo,setUser,setProfileImage } = flowSlice.actions;
+export const {
+  setSaving,
+  updatedUser,
+  setActiveUser,
+  clearUserInfo,
+  setUser,
+  setProfileImage,
+  setLoading,
+} = flowSlice.actions;

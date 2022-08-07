@@ -4,7 +4,7 @@ import { firebaseDB } from "../firebase/config";
 export const loadUser = async (displayName = "") => { //Cambie uid="" por displayName=""
 
   // if (!uid) throw new Error("El UID del usuario no existe");
-  if (!displayName) throw new Error("El UID del usuario no existe");
+  if (!displayName) throw new Error("El displayName del usuario no existe");
 
   // const collectionRef = doc(firebaseDB, `${uid}/info/`);
   const collectionRef = doc(firebaseDB, `${displayName}/info/`);
@@ -15,6 +15,6 @@ export const loadUser = async (displayName = "") => { //Cambie uid="" por displa
   const user = {
     ...resp.data(),
   };
-  
+
   return user;
 };

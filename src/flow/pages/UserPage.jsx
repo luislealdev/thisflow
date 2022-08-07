@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router-dom";
-import { loadUser } from "../../helpers/loadUser";
 import { startLoadingUsername } from "../../store/flow";
+import { Loading } from "../../ui/components/Loading";
 
 export const UserPage = () => {
   const { username, ...others } = useParams();
@@ -10,14 +10,17 @@ export const UserPage = () => {
 
   useEffect(() => {
     dispatch(startLoadingUsername(username));
-  }, [username])
-  
+  }, [username]);
 
-  // const user = undefined;
+  const { isLoading, activeUser } = useSelector((state) => state.flow);
 
-  if (username === undefined) {
-    return <Navigate to="/home" />;
+  if (isLoading == false) {
+    return activeUser.displayName != null ? (
+      <h1>{activeUser.displayName}</h1>
+    ) : (
+      <Navigate to="/home" />
+    );
+  } else {
+    return <Loading />;
   }
-
-  return <div>UserPage</div>;
 };

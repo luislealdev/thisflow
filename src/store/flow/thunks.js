@@ -1,8 +1,15 @@
 import { doc, setDoc } from "firebase/firestore/lite";
+import { Navigate } from "react-router-dom";
 import { firebaseDB } from "../../firebase/config";
 import { fileUpload } from "../../helpers/fileUpload";
 import { loadUser } from "../../helpers/loadUser";
-import { setProfileImage, setSaving, setUser, updatedUser } from "./flowSlice";
+import {
+  setLoading,
+  setProfileImage,
+  setSaving,
+  setUser,
+  updatedUser,
+} from "./flowSlice";
 
 export const startLoadingUser = () => {
   return async (dispatch, getState) => {
@@ -20,10 +27,16 @@ export const startLoadingUser = () => {
 
 export const startLoadingUsername = (username) => {
   return async (dispatch, getState) => {
+    dispatch(setSaving());
     if (!username) throw new Error("El username del usuario no existe");
     const user = await loadUser(username);
-
-    dispatch(setUser(user));
+    if (!user.displayName) {
+      dispatch(setLoading(false));
+      return;
+    } else {
+      dispatch(setUser(user));
+      dispatch(setLoading(false));
+    }
   };
 };
 
