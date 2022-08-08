@@ -8,12 +8,17 @@ export const flowSlice = createSlice({
     savedMessage: "",
     activeUser: {
       profilePicture: "",
-      displayName: null,
+      displayName: "",
       phrase: "",
       photos: [],
       songs: [],
-      socialMedia: {},
-      streamingApps: {},
+
+      facebookUrl: "",
+      instagramUrl: "",
+      youtubeUrl: "",
+
+      appleMusicUrl: "",
+      spotifyUrl: "",
     },
   },
   reducers: {
@@ -34,7 +39,7 @@ export const flowSlice = createSlice({
     updatedUser: (state, action) => {
       state.isSaving = false;
       state.activeUser = action.payload;
-      state.savedMessage = `"${action.payload.username}" saved correctly.`;
+      state.savedMessage = `"${action.payload.displayName}" saved correctly.`;
     },
     setProfileImage: (state, action) => {
       state.isSaving = false;
@@ -56,12 +61,16 @@ export const flowSlice = createSlice({
         (state.activeUser = {
           profilePicture: "",
           displayName: "",
-          username: "",
           phrase: "",
           photos: [],
           songs: [],
-          socialMedia: {},
-          streamingApp: {},
+
+          facebookUrl: "",
+          instagramUrl: "",
+          youtubeUrl: "",
+
+          appleMusicUrl: "",
+          spotifyUrl: "",
         });
     },
   },

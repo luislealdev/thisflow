@@ -23,7 +23,7 @@ export const UserPageInfo = ({ user }) => {
             </Grid>
 
             <Grid item xs={3}>
-              <DescriptionUserText /> {/*Hacerlo funcional*/}
+              <DescriptionUserText displayName={user.displayName} phrase={user.phrase} /> {/*Hacerlo funcional*/}
             </Grid>
           </Grid>
           <ImageGallery /> {/*Hacerlo funcional*/}
@@ -51,7 +51,7 @@ export const UserPageInfo = ({ user }) => {
         </div>
       </div>
 
-      <FloatButton /> {/*Hacerlo funcional*/}
+      <FloatButton url="https://www.instagram.com/luisrrleal"/> {/*Hacerlo funcional*/}
     </div>
   );
 };

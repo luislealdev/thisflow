@@ -11,12 +11,14 @@ import { DescriptionUserText } from "../../home/components/DescriptionUserText";
 import MediaControlCard from "../../home/components/MediaControlCard";
 import { SocialMedia } from "../../home/components/SocialMedia";
 import SaveIcon from "@mui/icons-material/Save";
+import IosShareIcon from "@mui/icons-material/IosShare";
 import "../../home/components/styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import LogoutIcon from "@mui/icons-material/Logout";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { startLogoutFirebase } from "../../store/auth/thunks";
 import { useForm } from "../../hooks/useForm";
+import Swal from "sweetalert2";
 import {
   startSavingInfo,
   setActiveUser,
@@ -35,7 +37,7 @@ export const HomePage = () => {
     dispatch(startSavingInfo());
   };
 
-  const { isSaving, activeUser } = useSelector((state) => state.flow);
+  const { isSaving, savedMessage, activeUser } = useSelector((state) => state.flow);
 
   const {
     profilePicture,
@@ -43,8 +45,11 @@ export const HomePage = () => {
     phrase,
     photos,
     songs,
-    socialMedia,
-    streamingApps,
+    facebookUrl,
+    instagramUrl,
+    youtubeUrl,
+    appleMusicUrl,
+    spotifyUrl,
     onInputChange,
     formState,
   } = useForm(activeUser);
@@ -52,6 +57,12 @@ export const HomePage = () => {
   useEffect(() => {
     dispatch(setActiveUser(formState));
   }, [formState]);
+
+  useEffect(() => {
+    if (savedMessage.length > 0) {
+      Swal.fire("Profile updated", savedMessage, "success");
+    }
+  }, [savedMessage]);
 
   const inputUploadImageRef = useRef();
 
@@ -70,7 +81,7 @@ export const HomePage = () => {
               direction="row"
               justifyContent="space-between"
               alignItems="center"
-              sx={{ m: 2 }}
+              sx={{ mb: 2 }}
             >
               <Grid item xs={4}>
                 <Button
@@ -82,8 +93,13 @@ export const HomePage = () => {
                   Save
                 </Button>
               </Grid>
+
               <Grid item xs={4}>
-                <Button color="secondary" onClick={onLogout}>
+                <Button
+                  color="secondary"
+                  onClick={onLogout}
+                  disabled={isSaving}
+                >
                   <LogoutIcon />
                 </Button>
               </Grid>
@@ -103,7 +119,7 @@ export const HomePage = () => {
                 style={{ display: "none" }}
               />
               <Grid>
-                <AvatarImg src={activeUser.profilePicture}/>
+                <AvatarImg src={activeUser.profilePicture} />
                 <Button
                   onClick={() => {
                     inputUploadImageRef.current.click();
@@ -112,6 +128,8 @@ export const HomePage = () => {
                   Change image
                 </Button>
               </Grid>
+              <h3 className="monospace">Personal info</h3>
+              <hr />
               <Grid item xs={3}>
                 <TextField
                   autoComplete="off"
@@ -142,6 +160,52 @@ export const HomePage = () => {
                   onChange={onInputChange}
                 />
               </Grid>
+              <h3 className="monospace">Social info</h3>
+              <hr />
+              <Grid item xs={3}>
+                <TextField
+                  autoComplete="off"
+                  type="text"
+                  variant="filled"
+                  fullWidth
+                  placeholder="https://instagram.com/..."
+                  label="Instagram"
+                  sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
+                  name="instagramUrl"
+                  value={instagramUrl}
+                  onChange={onInputChange}
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <TextField
+                  autoComplete="off"
+                  type="text"
+                  variant="filled"
+                  fullWidth
+                  placeholder="https://facebook.com/..."
+                  label="Facebook"
+                  sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
+                  name="facebookUrl"
+                  value={facebookUrl}
+                  onChange={onInputChange}
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <TextField
+                  autoComplete="off"
+                  type="text"
+                  variant="filled"
+                  fullWidth
+                  placeholder="https://youtube.com/..."
+                  label="Youtube"
+                  sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
+                  name="youtubeUrl"
+                  value={youtubeUrl}
+                  onChange={onInputChange}
+                />
+              </Grid>
+              <h3 className="monospace">Platforms info</h3>
+              <hr />
               <Grid item xs={4}>
                 <IconButton color="secondary">
                   <CloudUploadIcon />
@@ -172,7 +236,7 @@ export const HomePage = () => {
           </div>
         </div>
 
-        <FloatButton />
+        <FloatButton src="" />
       </div>
     </>
   );
