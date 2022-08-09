@@ -37,7 +37,9 @@ export const HomePage = () => {
     dispatch(startSavingInfo());
   };
 
-  const { isSaving, savedMessage, activeUser } = useSelector((state) => state.flow);
+  const { isSaving, savedMessage, activeUser } = useSelector(
+    (state) => state.flow
+  );
 
   const {
     profilePicture,
@@ -205,6 +207,34 @@ export const HomePage = () => {
                 />
               </Grid>
               <h3 className="monospace">Platforms info</h3>
+              <Grid item xs={3}>
+                <TextField
+                  autoComplete="off"
+                  type="text"
+                  variant="filled"
+                  fullWidth
+                  placeholder="https://applemusic.com/..."
+                  label="Apple Music"
+                  sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
+                  name="appleMusicUrl"
+                  value={appleMusicUrl}
+                  onChange={onInputChange}
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <TextField
+                  autoComplete="off"
+                  type="text"
+                  variant="filled"
+                  fullWidth
+                  placeholder="https://spotify.com/..."
+                  label="Spotify"
+                  sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
+                  name="spotifyUrl"
+                  value={spotifyUrl}
+                  onChange={onInputChange}
+                />
+              </Grid>
               <hr />
               <Grid item xs={4}>
                 <IconButton color="secondary">
