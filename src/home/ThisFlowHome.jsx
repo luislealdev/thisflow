@@ -15,7 +15,6 @@ import { NewsCard } from "./components/NewsCard";
 import { GridVideos } from "./components/GridVideos";
 import { Platforms } from "./components/Platforms";
 
-
 export const ThisFlowHome = () => {
   return (
     <>
@@ -36,7 +35,7 @@ export const ThisFlowHome = () => {
               justifyContent="center"
             >
               <Grid item xs={3}>
-                <AvatarImg src="src/home/assets/img/skrillex.jpeg" />
+                <AvatarImg src="https://i.discogs.com/8oZwwMydyiU_oGfEW44FG8hMn37boZUduFybDFE1Wi0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0NzI1/ODUtMTYxMjgxNTg4/My0yNjgwLmpwZWc.jpeg" />
               </Grid>
 
               <Grid item xs={3}>
@@ -57,7 +56,7 @@ export const ThisFlowHome = () => {
             <h5>
               Share <span>platforms</span> where your music is
             </h5>
-            <Platforms/>
+            <Platforms />
             <h5>
               Add your <span>last new</span>
             </h5>
