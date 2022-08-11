@@ -20,6 +20,7 @@ import {
   startUploadingProfileImage,
   deleteGaleryPhotos,
   startUploadingImages,
+  startUploadingLastNewImage,
 } from "../../store/flow";
 import { useEffect, useRef } from "react";
 import { GridImages } from "../../home/components/GridImages";
@@ -50,6 +51,7 @@ export const HomePage = () => {
     spotifyUrl,
     lastNewTitle,
     lastNewText,
+    lastNewImage,
     youtubeVideo1,
     youtubeVideo2,
     youtubeVideo3,
@@ -79,6 +81,13 @@ export const HomePage = () => {
   const onFilesInputChange = ({ target }) => {
     if (target.files == 0) return;
     dispatch(startUploadingImages(target.files));
+  };
+
+  const inputLastNewImageRef = useRef();
+
+  const onLastNewImageChange = ({ target }) => {
+    if (target.files == 0) return;
+    dispatch(startUploadingLastNewImage(target.files));
   };
 
   const onDeleteGaleryImages = () => {

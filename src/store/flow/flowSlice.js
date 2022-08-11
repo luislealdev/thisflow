@@ -14,6 +14,7 @@ export const flowSlice = createSlice({
 
       lastNewTitle: "",
       lastNewText: "",
+      lastNewImage: "",
 
       facebookUrl: "",
       instagramUrl: "",
@@ -65,6 +66,12 @@ export const flowSlice = createSlice({
         return;
       }
       state.activeUser.photos = [...action.payload];
+    },
+    setLastNewImage: (state, action) =>{
+      state.isSaving = false;
+      state.activeUser = {
+        lastNewImage: action.payload,
+      };
     },
     deleteGaleryPhotos: (state) => {
       state.activeUser.photos = [];

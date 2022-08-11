@@ -6,6 +6,7 @@ import { Loading } from "../../ui/components/Loading";
 import { UserPageInfo } from "./UserPageInfo";
 
 export const UserPage = () => {
+  
   const { username, ...others } = useParams();
   const dispatch = useDispatch();
 

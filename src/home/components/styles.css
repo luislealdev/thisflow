@@ -27,6 +27,7 @@
 .not-margin-top {
     margin-top: 0;
 }
+
 .not-margin-bottom {
     margin-bottom: 0;
 }
@@ -42,12 +43,13 @@
 .center {
     text-align: center;
 }
-.monospace{
+
+.monospace {
     font-family: monospace;
     color: black;
     font-weight: 400;
     font-size: x-large;
-}   
+}
 
 .cool h5 {
     font-family: monospace;
@@ -91,13 +93,30 @@
     color: whitesmoke;
 }
 
-.gridImages{
+.gridImages {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
-.gridImages img{
+
+.gridImages img {
     width: 10vw;
 }
+
+.newsCard{
+    text-align: center;
+    background-color: white;
+    border-radius: 3vw;
+    width: 25vw;
+    margin: 0 auto;
+    padding: 3vh;
+}
+.newsCard h4{
+    font-size: 4vh;
+}
+.newsCard p{
+    font-size: 2vh;
+}
+
 /* .card::before {
     content: '';
     position: absolute;
@@ -127,9 +146,9 @@
     z-index: -1;
 }
 
-.credits{
+.credits {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     background-color: black;
     width: 100vw;
     color: white;
@@ -137,10 +156,12 @@
     margin-top: -5vh;
     padding: 3vh;
 }
-.credits div{
+
+.credits div {
     margin: 2vw;
 }
-.credits h3{
+
+.credits h3 {
     font-family: monospace;
     color: whitesmoke;
     font-weight: 400;
@@ -166,11 +187,20 @@
         font-weight: 900;
         font-size: 4em;
     }
-    .credits{
-        grid-template-columns: repeat(1,1fr);
-    }
-    .gridImages{
+
+    .credits {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .gridImages {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .newsCard{
+        text-align: center;
+        background-color: white;
+        border-radius: 3vw;
+        width: 75vw;
+        margin: 0 auto;
+        padding: 3vh;
+    }
 }

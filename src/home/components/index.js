@@ -7,3 +7,4 @@ export * from './InitialInfo';
 export * from './SpaceAnimation';
 export * from './AvatarImg';
 export * from './Credits';
+export * from './GridImages'

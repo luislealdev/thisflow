@@ -87,3 +87,10 @@ export const startUploadingImages = (files) => {
     dispatch(setUserGaleryPhotos(photosUrls));
   };
 };
+
+export const startUploadingLastNewImage = (files) => {
+  return async (dispatch) => {
+    const lastNewImageUrl = await fileUpload(files[0]);
+    dispatch(setLastNewImage(lastNewImageUrl));
+  };
+};
