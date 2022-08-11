@@ -1,7 +1,6 @@
 import { Grid } from "@mui/material";
 import { AvatarImg, Credits, FloatButton, GridImages, ImageGallery } from "../../home/components";
 import { DescriptionUserText } from "../../home/components/DescriptionUserText";
-import MediaControlCard from "../../home/components/MediaControlCard";
 import { NewsCard } from "../../home/components/NewsCard";
 import { SocialMedia } from "../../home/components/SocialMedia";
 import "../../home/components/styles.css";

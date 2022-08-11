@@ -4,6 +4,7 @@ import { firebaseDB } from "../../firebase/config";
 import { fileUpload } from "../../helpers/fileUpload";
 import { loadUser } from "../../helpers/loadUser";
 import {
+  setLastNewImage,
   setLoading,
   setProfileImage,
   setSaving,

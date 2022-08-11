@@ -255,6 +255,7 @@ export const HomePage = () => {
                   value={spotifyUrl}
                   onChange={onInputChange}
                 />
+
                 <h3 className="monospace">Last New</h3>
                 <Grid item xs={3}>
                   <TextField
@@ -286,6 +287,26 @@ export const HomePage = () => {
                     onChange={onInputChange}
                   />
                 </Grid>
+                <input
+                  type="file"
+                  onChange={onLastNewImageChange}
+                  ref={inputLastNewImageRef}
+                  style={{ display: "none" }}
+                />
+                <Grid>
+                  <Button
+                    color="secondary"
+                    onClick={() => {
+                      inputLastNewImageRef.current.click();
+                    }}
+                    disabled={isSaving}
+                  >
+                    <CloudUploadIcon />
+                  </Button>
+                  <h3>Upload Image</h3>
+                  <h6>Upload an image to represent the last new </h6>
+                </Grid>
+                <br />
                 <h3 className="monospace">Youtube Videos</h3>
                 <Grid item xs={3}>
                   <TextField

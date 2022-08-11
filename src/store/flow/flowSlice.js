@@ -107,5 +107,6 @@ export const {
   setProfileImage,
   setLoading,
   setUserGaleryPhotos,
-  deleteGaleryPhotos
+  deleteGaleryPhotos,
+  setLastNewImage
 } = flowSlice.actions;
