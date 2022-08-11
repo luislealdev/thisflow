@@ -11,7 +11,6 @@ export const flowSlice = createSlice({
       displayName: "",
       phrase: "",
       photos: [],
-      songs: [],
 
       lastNewTitle: "",
       lastNewText: "",
@@ -50,17 +49,25 @@ export const flowSlice = createSlice({
     },
     setProfileImage: (state, action) => {
       state.isSaving = false;
-      // if (state.active.imagesUrls) {
-      //   state.active.imagesUrls = [
-      //     ...state.active.imagesUrls,
-      //     ...action.payload,
-      //   ];
-      //   return;
-      // }
-      // state.active.imagesUrls = [...action.payload];
+
       state.activeUser = {
         profilePicture: action.payload,
       };
+    },
+    setUserGaleryPhotos: (state, action) => {
+      state.isSaving = false;
+
+      if (state.activeUser.photos) {
+        state.activeUser.photos = [
+          ...state.activeUser.photos,
+          ...action.payload,
+        ];
+        return;
+      }
+      state.activeUser.photos = [...action.payload];
+    },
+    deleteGaleryPhotos: (state) => {
+      state.activeUser.photos = [];
     },
     clearUserInfo: (state) => {
       (state.isSaving = false),
@@ -92,4 +99,6 @@ export const {
   setUser,
   setProfileImage,
   setLoading,
+  setUserGaleryPhotos,
+  deleteGaleryPhotos
 } = flowSlice.actions;

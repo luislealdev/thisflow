@@ -8,6 +8,7 @@ import {
   setProfileImage,
   setSaving,
   setUser,
+  setUserGaleryPhotos,
   updatedUser,
 } from "./flowSlice";
 
@@ -69,5 +70,20 @@ export const startUploadingProfileImage = (files) => {
 
     // const photosUrls = await Promise.all(allFilesPromises);
     dispatch(setProfileImage(profileImageUrl));
+  };
+};
+
+export const startUploadingImages = (files) => {
+  return async (dispatch) => {
+    dispatch(setSaving());
+
+    // await fileUpload(files[0]);
+    const allFilesPromises = [];
+    for (const file of files) {
+      allFilesPromises.push(fileUpload(file));
+    }
+
+    const photosUrls = await Promise.all(allFilesPromises);
+    dispatch(setUserGaleryPhotos(photosUrls));
   };
 };

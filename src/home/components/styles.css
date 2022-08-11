@@ -91,6 +91,13 @@
     color: whitesmoke;
 }
 
+.gridImages{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.gridImages img{
+    width: 10vw;
+}
 /* .card::before {
     content: '';
     position: absolute;
@@ -161,6 +168,9 @@
     }
     .credits{
         grid-template-columns: repeat(1,1fr);
+    }
+    .gridImages{
+        grid-template-columns: repeat(1, 1fr);
     }
 
 }

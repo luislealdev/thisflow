@@ -1,21 +1,16 @@
+import { Button, Grid, IconButton, TextField } from "@mui/material";
 import {
-  Button,
-  Grid,
-  IconButton,
-  TextField,
-  Typography,
-  useFormControl,
-} from "@mui/material";
-import { AvatarImg, FloatButton, ImageGallery } from "../../home/components";
-import { DescriptionUserText } from "../../home/components/DescriptionUserText";
-import MediaControlCard from "../../home/components/MediaControlCard";
-import { SocialMedia } from "../../home/components/SocialMedia";
+  AvatarImg,
+  Credits,
+  FloatButton,
+  ImageGallery,
+} from "../../home/components";
 import SaveIcon from "@mui/icons-material/Save";
-import IosShareIcon from "@mui/icons-material/IosShare";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import DeleteIcon from "@mui/icons-material/Delete";
 import "../../home/components/styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import LogoutIcon from "@mui/icons-material/Logout";
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { startLogoutFirebase } from "../../store/auth/thunks";
 import { useForm } from "../../hooks/useForm";
 import Swal from "sweetalert2";
@@ -23,8 +18,11 @@ import {
   startSavingInfo,
   setActiveUser,
   startUploadingProfileImage,
+  deleteGaleryPhotos,
+  startUploadingImages,
 } from "../../store/flow";
 import { useEffect, useRef } from "react";
+import { GridImages } from "../../home/components/GridImages";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -42,11 +40,9 @@ export const HomePage = () => {
   );
 
   const {
-    profilePicture,
     displayName,
     phrase,
     photos,
-    songs,
     facebookUrl,
     instagramUrl,
     youtubeUrl,
@@ -76,6 +72,17 @@ export const HomePage = () => {
   const onFileInputChange = ({ target }) => {
     if (target.files == 0) return;
     dispatch(startUploadingProfileImage(target.files));
+  };
+
+  const inputUploadImagesRef = useRef();
+
+  const onFilesInputChange = ({ target }) => {
+    if (target.files == 0) return;
+    dispatch(startUploadingImages(target.files));
+  };
+
+  const onDeleteGaleryImages = () => {
+    dispatch(deleteGaleryPhotos());
   };
 
   return (
@@ -111,7 +118,7 @@ export const HomePage = () => {
                 </Button>
               </Grid>
             </Grid>
-
+            <h6>Remember to save the changes before logging out.</h6>
             <Grid
               container
               spacing={0}
@@ -314,38 +321,50 @@ export const HomePage = () => {
                   onChange={onInputChange}
                 />
               </Grid>
-              <hr />
+
+              <GridImages photos={photos} />
+
+              <input
+                type="file"
+                onChange={onFilesInputChange}
+                ref={inputUploadImagesRef}
+                style={{ display: "none" }}
+              />
+
               <Grid item xs={4}>
-                <IconButton color="secondary">
+                <Button
+                  color="secondary"
+                  onClick={() => {
+                    inputUploadImagesRef.current.click();
+                  }}
+                  disabled={isSaving}
+                >
                   <CloudUploadIcon />
-                </IconButton>
+                </Button>
+                <h3> Upload Images</h3>
+                <h6>We recomend you just upload 3 images.</h6>
               </Grid>
-              Upload images
+
+              <Grid item xs={4}>
+                <Button
+                  color="secondary"
+                  onClick={onDeleteGaleryImages}
+                  disabled={isSaving}
+                >
+                  <DeleteIcon />
+                </Button>
+                <h3>Delete images</h3>
+                <h6>
+                  If you have a lot of pictures of you want to add new ones and
+                  delete the others.
+                </h6>
+              </Grid>
             </Grid>
-
-            {/* <ImageGallery /> */}
-
-            {/* <div className="songs">
-              <MediaControlCard
-                songName="Where Are Ü Now"
-                authors="Diplo, Jack Ü & Skrillex"
-                img="src/home/assets/img/whereareu.jpg"
-              />
-              <MediaControlCard
-                songName="In Da Getto"
-                authors="J Balvin & Skrillex"
-                img="src/home/assets/img/idg.jpeg"
-              />
-              <MediaControlCard
-                songName="Purple Lamborghini"
-                authors="Skrillex & Rick Ross"
-                img="src/home/assets/img/plam.jpeg"
-              />
-            </div> */}
           </div>
         </div>
 
         <FloatButton src="" />
+        <Credits />
       </div>
     </>
   );
