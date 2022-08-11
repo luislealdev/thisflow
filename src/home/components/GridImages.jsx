@@ -1,11 +1,11 @@
-export const GridImages = ({ photos=[] }) => {
+export const GridImages = ({ photos = [] }) => {
   return (
     <div className="gridImages">
-    {photos.map((photo)=>(
-        <div>
-        <img src={photo}/>
-      </div>
-    ))}
+      {photos.map((photo) => (
+        <div key={photo}>
+          <img src={photo} />
+        </div>
+      ))}
     </div>
   );
 };

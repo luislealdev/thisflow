@@ -101,11 +101,12 @@
 .gridImages img {
     width: 30vw;
 }
+
 .gridImages iframe {
     width: 30vw;
 }
 
-.newsCard{
+.newsCard {
     text-align: center;
     background-color: white;
     border-radius: 3vw;
@@ -113,14 +114,17 @@
     margin: 0 auto;
     padding: 2vw;
 }
-.newsCard img{
+
+.newsCard img {
     max-width: 21vw;
     border-radius: 3vw;
 }
-.newsCard h4{
+
+.newsCard h4 {
     font-size: 4vh;
 }
-.newsCard p{
+
+.newsCard p {
     font-size: 2vh;
 }
 
@@ -175,7 +179,17 @@
     font-size: x-large;
 }
 
+.credits a {
+    color: #d3b3fd
+}
 
+.platforms {
+    display: inline-block;
+}
+
+.platforms a {
+    color: black;
+}
 
 @media (max-width: 600px) {
     .songs {
@@ -202,22 +216,26 @@
     .gridImages {
         grid-template-columns: repeat(1, 1fr);
     }
-    .gridImages img{
+
+    .gridImages img {
         border-radius: 2vh;
         width: 80%;
     }
+
     .gridImages iframe {
         width: 80%;
     }
-    .newsCard{
-        text-align: center; 
+
+    .newsCard {
+        text-align: center;
         background-color: white;
         border-radius: 3vw;
         width: 75vw;
         margin: 0 auto;
         padding: 6vw;
     }
-    .newsCard img{
+
+    .newsCard img {
         max-width: 63vw;
         border-radius: 3vw;
     }

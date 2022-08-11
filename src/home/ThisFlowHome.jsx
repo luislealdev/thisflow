@@ -1,21 +1,20 @@
 import React from "react";
 import {
-  Donations,
   FloatButton,
-  ImageGallery,
   NavBar,
   InitialInfo,
   AvatarImg,
   Credits,
   GridImages,
 } from "./components";
-import MediaControlCard from "./components/MediaControlCard";
 import "../home/components/styles.css";
 import { DescriptionUserText } from "./components/DescriptionUserText";
 import { Grid } from "@mui/material";
 import { SocialMedia } from "./components/SocialMedia";
 import { NewsCard } from "./components/NewsCard";
 import { GridVideos } from "./components/GridVideos";
+import { Platforms } from "./components/Platforms";
+
 
 export const ThisFlowHome = () => {
   return (
@@ -58,7 +57,7 @@ export const ThisFlowHome = () => {
             <h5>
               Share <span>platforms</span> where your music is
             </h5>
-            
+            <Platforms/>
             <h5>
               Add your <span>last new</span>
             </h5>
@@ -86,7 +85,6 @@ export const ThisFlowHome = () => {
               youtubeVideo2="https://www.youtube.com/embed/BGpzGu9Yp6Y"
               youtubeVideo3="https://www.youtube.com/embed/2cXDgFwE13g"
             />
-
           </div>
         </div>
 

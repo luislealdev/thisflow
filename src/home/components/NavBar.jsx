@@ -13,7 +13,6 @@ import MenuItem from "@mui/material/MenuItem";
 
 import { Link, Link as RouterLink } from "react-router-dom";
 
-const pages = ["Home", "About", "Donations", "Follow"];
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -80,11 +79,6 @@ export const NavBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
             </Menu>
           </Box>
           <LocalFireDepartmentIcon
@@ -109,15 +103,6 @@ export const NavBar = () => {
             THIS FLOW
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
