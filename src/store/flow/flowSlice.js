@@ -13,12 +13,19 @@ export const flowSlice = createSlice({
       photos: [],
       songs: [],
 
+      lastNewTitle: "",
+      lastNewText: "",
+
       facebookUrl: "",
       instagramUrl: "",
       youtubeUrl: "",
 
       appleMusicUrl: "",
       spotifyUrl: "",
+
+      youtubeVideo1: "",
+      youtubeVideo2: "",
+      youtubeVideo3: "",
     },
   },
   reducers: {

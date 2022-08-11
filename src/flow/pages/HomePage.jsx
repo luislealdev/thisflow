@@ -52,6 +52,11 @@ export const HomePage = () => {
     youtubeUrl,
     appleMusicUrl,
     spotifyUrl,
+    lastNewTitle,
+    lastNewText,
+    youtubeVideo1,
+    youtubeVideo2,
+    youtubeVideo3,
     onInputChange,
     formState,
   } = useForm(activeUser);
@@ -199,7 +204,7 @@ export const HomePage = () => {
                   variant="filled"
                   fullWidth
                   placeholder="https://youtube.com/..."
-                  label="Youtube"
+                  label="Youtube Chanel"
                   sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
                   name="youtubeUrl"
                   value={youtubeUrl}
@@ -232,6 +237,80 @@ export const HomePage = () => {
                   sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
                   name="spotifyUrl"
                   value={spotifyUrl}
+                  onChange={onInputChange}
+                />
+                <h3 className="monospace">Last New</h3>
+                <Grid item xs={3}>
+                  <TextField
+                    autoComplete="off"
+                    type="text"
+                    variant="filled"
+                    fullWidth
+                    placeholder="My new song"
+                    label="Title"
+                    sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
+                    name="lastNewTitle"
+                    value={lastNewTitle}
+                    onChange={onInputChange}
+                  />
+                </Grid>
+                <Grid item xs={3}>
+                  <TextField
+                    autoComplete="off"
+                    type="text"
+                    variant="filled"
+                    multiline
+                    fullWidth
+                    placeholder='Hey guys! Just release a new song called "my new song", im so happy...'
+                    label="Text"
+                    sx={{ border: "none", mb: 1, mt: 2, width: "70vw" }}
+                    minRows={3}
+                    name="lastNewText"
+                    value={lastNewText}
+                    onChange={onInputChange}
+                  />
+                </Grid>
+                <h3 className="monospace">Youtube Videos</h3>
+                <Grid item xs={3}>
+                  <TextField
+                    autoComplete="off"
+                    type="text"
+                    variant="filled"
+                    fullWidth
+                    placeholder="https://youtube.com/..."
+                    label="Youtube Video 1"
+                    sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
+                    name="youtubeVideo1"
+                    value={youtubeVideo1}
+                    onChange={onInputChange}
+                  />
+                </Grid>
+                <Grid item xs={3}>
+                  <TextField
+                    autoComplete="off"
+                    type="text"
+                    variant="filled"
+                    fullWidth
+                    placeholder="https://youtube.com/..."
+                    label="Youtube Video 2"
+                    sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
+                    name="youtubeVideo2"
+                    value={youtubeVideo2}
+                    onChange={onInputChange}
+                  />
+                </Grid>
+              </Grid>
+              <Grid item xs={3}>
+                <TextField
+                  autoComplete="off"
+                  type="text"
+                  variant="filled"
+                  fullWidth
+                  placeholder="https://youtube.com/..."
+                  label="Youtube Video 3"
+                  sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
+                  name="youtubeVideo3"
+                  value={youtubeVideo3}
                   onChange={onInputChange}
                 />
               </Grid>
