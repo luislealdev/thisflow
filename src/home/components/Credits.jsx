@@ -14,23 +14,25 @@ export const Credits = () => {
           <h3>About</h3>
           <p>
             Create a website for an artist who's starting could be expensive,
-            thats why <span>thisflow</span>...
+            thats why <span>thisflow</span> is your best option to share your
+            art.
           </p>
         </div>
         <div>
           <h3>Donations</h3>
           <p>
             <span>Thisflow</span> is totally free and will be totally free
-            forever, but there are ...
+            forever, but there are expenses to cover, if you want to help you
+            can <span>click here.</span>
           </p>
         </div>
         <div>
           <h3>Follow</h3>
           <p>
-            Hey! Im Luis Leal and i created <span>thisflow</span>, you can
+            Hey! Im Luis Leal and i created <span>ThisFlow</span>, you can
             follow me on my social media to see new apps. <br />
-            Of course i have my personal page on <span>thisflow</span> to check
-            it, <a>click here!</a>
+            Of course i have my personal page on <span>ThisFlow</span> to check
+            it, <a href="/luisrrleal">click here!</a>
           </p>
         </div>
         <div>

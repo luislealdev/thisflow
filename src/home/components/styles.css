@@ -99,7 +99,10 @@
 }
 
 .gridImages img {
-    width: 10vw;
+    width: 30vw;
+}
+.gridImages iframe {
+    width: 30vw;
 }
 
 .newsCard{
@@ -199,8 +202,15 @@
     .gridImages {
         grid-template-columns: repeat(1, 1fr);
     }
+    .gridImages img{
+        border-radius: 2vh;
+        width: 80%;
+    }
+    .gridImages iframe {
+        width: 80%;
+    }
     .newsCard{
-        text-align: center;
+        text-align: center; 
         background-color: white;
         border-radius: 3vw;
         width: 75vw;
