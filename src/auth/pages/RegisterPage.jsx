@@ -142,6 +142,7 @@ export const RegisterPage = () => {
             )}
 
             <Grid item xs={12}>
+              <p>You won't be able to change this information</p>
               <Button
                 variant="contained"
                 fullWidth
