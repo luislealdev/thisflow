@@ -91,6 +91,7 @@ export const startUploadingImages = (files) => {
 
 export const startUploadingLastNewImage = (files) => {
   return async (dispatch) => {
+    dispatch(setSaving());
     const lastNewImageUrl = await fileUpload(files[0]);
     dispatch(setLastNewImage(lastNewImageUrl));
   };

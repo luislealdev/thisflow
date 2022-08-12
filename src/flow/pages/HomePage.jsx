@@ -40,6 +40,8 @@ export const HomePage = () => {
     (state) => state.flow
   );
 
+  const { displayName: username } = useSelector((state) => state.auth);
+
   const {
     displayName,
     phrase,
@@ -128,6 +130,18 @@ export const HomePage = () => {
               </Grid>
             </Grid>
             <h6>Remember to save the changes before logging out.</h6>
+            <div>
+              <h5>
+                Your personal thisflow page:
+                <br/>
+                <a href={`https://luislealdev.github.io/thisflow/#/${username}`} target="_blank">
+                @{username}
+                </a>
+
+
+              </h5>
+            </div>
+
             <Grid
               container
               spacing={0}
@@ -287,6 +301,12 @@ export const HomePage = () => {
                     onChange={onInputChange}
                   />
                 </Grid>
+                <div>
+                  <img
+                    src={lastNewImage}
+                    style={{ width: "10vw", borderRadius: "3vh" }}
+                  />
+                </div>
                 <input
                   type="file"
                   onChange={onLastNewImageChange}

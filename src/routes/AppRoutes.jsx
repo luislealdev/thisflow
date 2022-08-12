@@ -11,7 +11,6 @@ export const AppRoutes = () => {
   return (
     <Routes>
       <Route path="home" element={<ThisFlowHome />} />
-      <Route path='safetyapp' element={<ThisFlowHome />} />
       <Route path="flow/*" element={<LoginRoutes />} />
 
       {/*Find user */}
