@@ -13,6 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 
 import { Link, Link as RouterLink } from "react-router-dom";
 
+const pages = ["Home", "Info"];
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -79,6 +80,26 @@ export const NavBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography
+                  textAlign="center"
+                  component="a"
+                  href="/"
+                  sx={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Home
+                </Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography
+                  textAlign="center"
+                  component="a"
+                  href="#info"
+                  sx={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Info
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <LocalFireDepartmentIcon
@@ -102,8 +123,7 @@ export const NavBar = () => {
           >
             THIS FLOW
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}></Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Link

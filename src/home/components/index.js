@@ -8,3 +8,4 @@ export * from './SpaceAnimation';
 export * from './AvatarImg';
 export * from './Credits';
 export * from './GridImages'
+export * from './Platforms';

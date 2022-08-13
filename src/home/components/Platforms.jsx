@@ -10,6 +10,7 @@ export const Platforms = ({ appleMusicUrl = "", spotifyUrl = "" }) => {
       <a href={spotifyUrl}>
         <FontAwesomeIcon size="3x" icon={faSpotify} />
       </a>
+      <h3>Listen my music!</h3>
     </div>
   );
 };

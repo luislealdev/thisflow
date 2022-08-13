@@ -17,7 +17,7 @@ export const UserPage = () => {
   const { isLoading, activeUser } = useSelector((state) => state.flow);
 
   if (isLoading == false) {
-    return activeUser.displayName != null ? (
+    return activeUser.displayName != "" ? (
       <UserPageInfo user={activeUser}/>
     ) : (
       <Navigate to="/home" />

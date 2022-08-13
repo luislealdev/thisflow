@@ -5,8 +5,10 @@ import {
   FloatButton,
   GridImages,
   ImageGallery,
+  Platforms,
 } from "../../home/components";
 import { DescriptionUserText } from "../../home/components/DescriptionUserText";
+import { GridVideos } from "../../home/components/GridVideos";
 import { NewsCard } from "../../home/components/NewsCard";
 import { SocialMedia } from "../../home/components/SocialMedia";
 import "../../home/components/styles.css";
@@ -41,6 +43,11 @@ export const UserPageInfo = ({ user }) => {
             instagramUrl={user.instagramUrl}
             youtubeUrl={user.youtubeUrl}
           />
+          <Platforms
+            appleMusicUrl={user.appleMusicUrl}
+            spotifyUrl={user.spotifyUrl}
+          />
+          <br />
           <br />
           <NewsCard
             lastNewTitle={user.lastNewTitle}
@@ -49,11 +56,13 @@ export const UserPageInfo = ({ user }) => {
           />
           <br />
           <GridImages photos={user.photos} />
-
-          
+          <br />
+          <GridVideos
+            youtubeVideo1={user.youtubeVideo1}
+            youtubeVideo2={user.youtubeVideo2}
+            youtubeVideo3={user.youtubeVideo3}
+          />
         </div>
-
-
       </div>
 
       <FloatButton url={user.instagramUrl} />

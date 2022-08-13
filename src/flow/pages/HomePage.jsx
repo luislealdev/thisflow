@@ -133,12 +133,13 @@ export const HomePage = () => {
             <div>
               <h5>
                 Your personal thisflow page:
-                <br/>
-                <a href={`https://luislealdev.github.io/thisflow/#/${username}`} target="_blank">
-                @{username}
+                <br />
+                <a
+                  href={`https://thisflow.netlify.app/${username}`}
+                  target="_blank"
+                >
+                  @{username}
                 </a>
-
-
               </h5>
             </div>
 

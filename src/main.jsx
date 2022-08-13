@@ -9,9 +9,9 @@ import { ThisFlowApp } from './ThisFlowApp'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <HashRouter> {/*Change BrowserRouter to HashRouter */}
+      <BrowserRouter> {/*Change BrowserRouter to HashRouter */}
         <ThisFlowApp />
-      </HashRouter>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 )

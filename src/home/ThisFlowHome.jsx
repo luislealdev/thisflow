@@ -56,7 +56,7 @@ export const ThisFlowHome = () => {
             <h5>
               Share <span>platforms</span> where your music is
             </h5>
-            <Platforms />
+            <Platforms appleMusicUrl="" spotifyUrl="" />
             <h5>
               Add your <span>last new</span>
             </h5>
@@ -89,7 +89,9 @@ export const ThisFlowHome = () => {
 
         <FloatButton url="www.instagram.com/luisrrleal" />
       </div>
-      <Credits />
+      <div id="info">
+        <Credits />
+      </div>
     </>
   );
 };
