@@ -12,15 +12,21 @@ export const Credits = () => {
       <div className="credits">
         <div>
           <h3>About</h3>
-          <p>
+          {/* <p>
             Create a website for an artist who's starting could be expensive,
             thats why <span>thisflow</span> is your best option to share your
             art.
+          </p> */}
+          <p>
+            Crear un sitio web para un artista que está empezando puede ser
+            caro, por eso <span>thisflow</span> es tu mejor opción para
+            compartir tu arte.
           </p>
         </div>
         <div>
-          <h3>Donations</h3>
-          <p>
+          {/* <h3>Donations</h3> */}
+          <h3>Donaciones</h3>
+          {/* <p>
             <span>Thisflow</span> is totally free and will be totally free
             forever, but there are expenses to cover, if you want to help you
             can,{" "}
@@ -30,11 +36,22 @@ export const Credits = () => {
             >
               click here!
             </a>
+          </p> */}
+          <p>
+            <span>Thisflow</span> es totalmente gratis y será totalmente gratis
+            por siempre pero hay gastos que se tienen que cubrir, si quieres
+            ayudar, tu puedes{" "}
+            <a
+              href="https://paypal.me/luisrrleal?country.x=MX&locale.x=en_US"
+              target="_blank"
+            >
+              click aquí!
+            </a>
           </p>
         </div>
         <div>
-          <h3>Follow</h3>
-          <p>
+          {/*<h3>Follow</h3>
+           <p>
             Hey! Im Luis Leal and i created <span>ThisFlow</span>, you can
             follow me on my social media to see new apps. <br />
             Of course i have my personal page on <span>ThisFlow</span> to check
@@ -42,10 +59,20 @@ export const Credits = () => {
             <a href="/luisrrleal" target="_blank">
               click here!
             </a>
+          </p> */}
+          <h3>Sígueme!</h3>
+          <p>
+            Hola! Soy Luis Leal y he creado <span>ThisFlow</span>, puedes
+            seguirme en mis redes sociales para ver nuevas aplicaciones. <br />
+            Claro que tengo mi propia página de <span>ThisFlow</span> para verla{" "}
+            <a href="/luisrrleal" target="_blank">
+              click aquí!
+            </a>
           </p>
         </div>
         <div>
-          <h5>Copyright thisflow 2022. All rights reserved</h5>
+          {/* <h5>Copyright thisflow 2022. All rights reserved</h5> */}
+          <h5>Copyright thisflow 2022. Todos los derechos reservados</h5>
         </div>
       </div>
     </div>

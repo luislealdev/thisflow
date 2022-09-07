@@ -23,8 +23,11 @@ export const ThisFlowHome = () => {
         <InitialInfo />
         <div className="bg-principal cool ">
           <div className="bg-secondary margin-2 padding-2 not-margin-top not-margin-bottom border-radius center">
-            <h5>
+            {/* <h5>
               Add a <span>profile picture</span> and <span>describe you</span>
+            </h5> */}
+            <h5>
+              Agrega una <span>foto de perfil</span> y <span>descríbete</span>
             </h5>
 
             <Grid
@@ -41,32 +44,46 @@ export const ThisFlowHome = () => {
               <Grid item xs={3}>
                 <DescriptionUserText
                   displayName="Skrillex"
-                  phrase="I never set out to be part of a genre, because I listen to all types of music."
+                  // phrase="I never set out to be part of a genre, because I listen to all types of music."
+                  phrase="Nunca me propuse ser parse de un género, porque escucho todo tipo de música"
                 />
               </Grid>
             </Grid>
-            <h5>
+            {/* <h5>
               Share your <span>social media</span>
+            </h5> */}
+            <h5>
+              Comparte tus <span>redes sociales</span>
             </h5>
             <SocialMedia
               facebookUrl="https://www.facebook.com/skrillex"
               instagramUrl="https://www.youtube.com/channel/UC_TVqp_SyG6j5hG-xVRy95A"
               youtubeUrl="https://www.instagram.com/skrillex/"
             />
-            <h5>
+            {/* <h5>
               Share <span>platforms</span> where your music is
+            </h5> */}
+            <h5>
+              Comparte <span>plataformas</span> donde tu música está
             </h5>
             <Platforms appleMusicUrl="" spotifyUrl="" />
-            <h5>
+            {/* <h5>
               Add your <span>last new</span>
+            </h5> */}
+            <h5>
+              Agrega tu <span>última noticia</span>
             </h5>
             <NewsCard
-              lastNewTitle='My new song "Dont Go" is out now!'
+              // lastNewTitle='My new song "Dont Go" is out now!'
+              lastNewTitle='Escucha mi nueva canción "Dont Go"!'
               lastNewText="Skrillex, Justin Bieber & Don Toliver"
               lastNewImage="https://i0.wp.com/plus.cusica.com/wp-content/uploads/2021/08/justinbieberxskrillexxdontoliver.jpg?fit=2048%2C2048&ssl=1"
             />
-            <h5>
+            {/* <h5>
               Create your <span>own gallery</span>
+            </h5> */}
+            <h5>
+              Crea tu <span>propia galería</span>
             </h5>
             <GridImages
               photos={[
@@ -75,8 +92,11 @@ export const ThisFlowHome = () => {
                 "https://img.redbull.com/images/c_fill,w_1200,h_630,g_auto,f_auto,q_auto/redbullcom/2013/03/06/1331582967322_1/skrillex-y-compa%C3%B1%C3%ADa-giran-los-platos.JPG",
               ]}
             />
-            <h5>
+            {/* <h5>
               Let your fans <span>play your music</span> from the website
+            </h5> */}
+            <h5>
+              Permite a tus fans <span>reproducir tu música</span> desde el navegador
             </h5>
 
             <GridVideos

@@ -67,7 +67,11 @@ export const HomePage = () => {
 
   useEffect(() => {
     if (savedMessage.length > 0) {
-      Swal.fire("Profile updated", savedMessage, "success");
+      Swal.fire(
+        "Perfil actualizado",
+        "Recarga la página para evitar errores",
+        "success"
+      );
     }
   }, [savedMessage]);
 
@@ -115,7 +119,7 @@ export const HomePage = () => {
                   disabled={isSaving}
                 >
                   <SaveIcon />
-                  Save
+                  Guardar
                 </Button>
               </Grid>
 
@@ -129,10 +133,10 @@ export const HomePage = () => {
                 </Button>
               </Grid>
             </Grid>
-            <h6>Remember to save the changes before logging out.</h6>
+            <h6>Recuerda guardar los cambios antes de salir.</h6>
             <div>
               <h5>
-                Your personal thisflow page:
+                Tu página personal de thisflow:
                 <br />
                 <a
                   href={`https://thisflow.netlify.app/${username}`}
@@ -163,10 +167,10 @@ export const HomePage = () => {
                     inputUploadImageRef.current.click();
                   }}
                 >
-                  Change image
+                  Cambiar imagen
                 </Button>
               </Grid>
-              <h3 className="monospace">Personal info</h3>
+              <h3 className="monospace">Información personal</h3>
               <hr />
               <Grid item xs={3}>
                 <TextField
@@ -175,7 +179,7 @@ export const HomePage = () => {
                   variant="filled"
                   fullWidth
                   placeholder="Skrillex Tomorrowland"
-                  label="Name"
+                  label="Nombre"
                   sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
                   name="displayName"
                   value={displayName}
@@ -189,8 +193,8 @@ export const HomePage = () => {
                   variant="filled"
                   multiline
                   fullWidth
-                  placeholder="Life is good..."
-                  label="Phrase"
+                  placeholder="La vida es buena..."
+                  label="Frase"
                   sx={{ border: "none", mb: 1, mt: 2, width: "70vw" }}
                   minRows={3}
                   name="phrase"
@@ -198,7 +202,7 @@ export const HomePage = () => {
                   onChange={onInputChange}
                 />
               </Grid>
-              <h3 className="monospace">Social info</h3>
+              <h3 className="monospace">Redes sociales</h3>
               <hr />
               <Grid item xs={3}>
                 <TextField
@@ -242,7 +246,7 @@ export const HomePage = () => {
                   onChange={onInputChange}
                 />
               </Grid>
-              <h3 className="monospace">Platforms info</h3>
+              <h3 className="monospace">Plataformas</h3>
               <Grid item xs={3}>
                 <TextField
                   autoComplete="off"
@@ -271,15 +275,15 @@ export const HomePage = () => {
                   onChange={onInputChange}
                 />
 
-                <h3 className="monospace">Last New</h3>
+                <h3 className="monospace">Última noticia</h3>
                 <Grid item xs={3}>
                   <TextField
                     autoComplete="off"
                     type="text"
                     variant="filled"
                     fullWidth
-                    placeholder="My new song"
-                    label="Title"
+                    placeholder="My nueva canción"
+                    label="Título"
                     sx={{ border: "none", mb: 1, mt: 1, width: "70vw" }}
                     name="lastNewTitle"
                     value={lastNewTitle}
@@ -293,8 +297,8 @@ export const HomePage = () => {
                     variant="filled"
                     multiline
                     fullWidth
-                    placeholder='Hey guys! Just release a new song called "my new song", im so happy...'
-                    label="Text"
+                    placeholder='Hola chicos! Acabo de lanzar mi nueva canción "my new song", estoy muy feliz...'
+                    label="Texto"
                     sx={{ border: "none", mb: 1, mt: 2, width: "70vw" }}
                     minRows={3}
                     name="lastNewText"
@@ -305,7 +309,7 @@ export const HomePage = () => {
                 <div>
                   <img
                     src={lastNewImage}
-                    style={{ width: "10vw", borderRadius: "3vh" }}
+                    style={{ width: "30vw", borderRadius: "3vh" }}
                   />
                 </div>
                 <input
@@ -324,8 +328,9 @@ export const HomePage = () => {
                   >
                     <CloudUploadIcon />
                   </Button>
-                  <h3>Upload Image</h3>
-                  <h6>Upload an image to represent the last new </h6>
+                  <h3>Subit imagen</h3>
+                  {/* <h6>Upload an image to represent the last new </h6> */}
+                  <h6>Subir una imagen para representar la última noticia </h6>
                 </Grid>
                 <br />
                 <h3 className="monospace">Youtube Videos</h3>
@@ -392,8 +397,8 @@ export const HomePage = () => {
                 >
                   <CloudUploadIcon />
                 </Button>
-                <h3> Upload Images</h3>
-                <h6>We recomend you just upload 3 images.</h6>
+                <h3> Subir imagenes</h3>
+                <h6>Te recomendamos subir máximo 3 imagenes.</h6>
               </Grid>
 
               <Grid item xs={4}>
@@ -404,17 +409,17 @@ export const HomePage = () => {
                 >
                   <DeleteIcon />
                 </Button>
-                <h3>Delete images</h3>
+                <h3>Eliminar imagenes</h3>
                 <h6>
-                  If you have a lot of pictures of you want to add new ones and
-                  delete the others.
+                  Si tienes muchas fotos o si quieres agregar nuevas y eliminar
+                  anteriores.
                 </h6>
               </Grid>
             </Grid>
           </div>
         </div>
 
-        <FloatButton src="" />
+        <FloatButton src={instagramUrl} />
         <Credits />
       </div>
     </>

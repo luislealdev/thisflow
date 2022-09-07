@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { AuthLayout } from "../layout/AuthLayout";
 import { useForm } from "../../hooks/useForm";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startCreatingNewUserWithEmailPassword } from "../../store/auth/thunks";
 import { NavBar } from "../../home/components";
@@ -29,11 +29,38 @@ export const RegisterPage = () => {
   const isCheckingAuth = useMemo(() => status === "checking", [status]);
 
   const formValidations = {
-    email: [(value) => value.includes("@"), "Please enter a valid email"],
-    password: [(value) => value.length >= 6, "Please enter a valid password"],
+    email: [(value) => value.includes("@"), "Ingrese un correo válido"],
+    password: [(value) => value.length >= 6, "Ingrese una contraseña válida"],
     displayName: [
       (value) =>
         value.length > 5 &&
+        !value.includes("A") &&
+        !value.includes("B") &&
+        !value.includes("C") &&
+        !value.includes("D") &&
+        !value.includes("E") &&
+        !value.includes("F") &&
+        !value.includes("G") &&
+        !value.includes("H") &&
+        !value.includes("I") &&
+        !value.includes("J") &&
+        !value.includes("K") &&
+        !value.includes("L") &&
+        !value.includes("M") &&
+        !value.includes("N") &&
+        !value.includes("Ñ") &&
+        !value.includes("O") &&
+        !value.includes("P") &&
+        !value.includes("Q") &&
+        !value.includes("R") &&
+        !value.includes("S") &&
+        !value.includes("T") &&
+        !value.includes("U") &&
+        !value.includes("V") &&
+        !value.includes("W") &&
+        !value.includes("X") &&
+        !value.includes("Y") &&
+        !value.includes("Z") &&
         !value.includes(" ") &&
         !value.includes("@") &&
         !value.includes("/") &&
@@ -60,8 +87,9 @@ export const RegisterPage = () => {
         !value.includes("[") &&
         !value.includes("]") &&
         !value.includes("¨") &&
-        !value.includes("Ç"),
-      "Please enter a valid username (No spaces and no special icons)",
+        !value.includes("Ç") &&
+        !value.includes("ñ"),
+      "Ingrese un usuario válido (No espacios, no caracteres especiales y no mayúsculas)",
     ],
   };
 
@@ -142,20 +170,20 @@ export const RegisterPage = () => {
             )}
 
             <Grid item xs={12}>
-              <p>You won't be able to change this information</p>
+              <h5>No podrás cambiar más adelante esta información</h5>
               <Button
                 variant="contained"
                 fullWidth
                 type="submit"
                 disabled={isCheckingAuth}
               >
-                Register now
+                Registrarse ahora
               </Button>
             </Grid>
           </Grid>
 
           <Grid container direction="row" justifyContent="end">
-            <Typography sx={{ mr: 1 }}>Already have an account?</Typography>
+            <Typography sx={{ mr: 1 }}>¿Ya tienes una cuenta?</Typography>
             <Link component={RouterLink} color="inherit" to="/flow/login">
               login
             </Link>

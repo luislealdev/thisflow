@@ -46,7 +46,7 @@ export const flowSlice = createSlice({
     updatedUser: (state, action) => {
       state.isSaving = false;
       state.activeUser = action.payload;
-      state.savedMessage = `"${action.payload.displayName}" saved correctly.`;
+      state.savedMessage = `"Profile saved correctly.`;
     },
     setProfileImage: (state, action) => {
       state.isSaving = false;

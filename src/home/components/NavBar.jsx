@@ -87,7 +87,7 @@ export const NavBar = () => {
                   href="/"
                   sx={{ textDecoration: "none", color: "inherit" }}
                 >
-                  Home
+                  Inicio
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
@@ -97,7 +97,7 @@ export const NavBar = () => {
                   href="#info"
                   sx={{ textDecoration: "none", color: "inherit" }}
                 >
-                  Info
+                  Créditos
                 </Typography>
               </MenuItem>
             </Menu>
