@@ -139,7 +139,7 @@ export const HomePage = () => {
                 Tu página personal de thisflow:
                 <br />
                 <a
-                  href={`https://thisflow.netlify.app/${username}`}
+                  href={`https://thisflow.me/${username}`}
                   target="_blank"
                 >
                   @{username}

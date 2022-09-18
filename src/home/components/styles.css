@@ -190,6 +190,17 @@
 .platforms a {
     color: black;
 }
+.tutorialPage{
+    margin: 0 30vw 0 30vw;
+    align-items: center;
+    text-align: center;
+    background-color:white;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+.tutorialPage img{
+    width: 40vw;
+}
 
 @media (max-width: 600px) {
     .songs {
@@ -238,5 +249,11 @@
     .newsCard img {
         max-width: 63vw;
         border-radius: 3vw;
+    }
+    .tutorialPage{
+        margin: 5vh;
+    }
+    .tutorialPage h3{
+        font-size: 2vh;
     }
 }

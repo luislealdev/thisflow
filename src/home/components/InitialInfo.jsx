@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { SpaceAnimation } from "./SpaceAnimation";
 import "./styles.css";
 
@@ -12,6 +13,9 @@ export const InitialInfo = () => {
           <h1>THIS FLOW</h1>
           {/* <p>Your personal artist website</p> */}
           <p>Tu sitio web personal de artista</p>
+          <hr/> 
+          <br/>
+          <Link to="/tutorial" style={{color: "white", fontFamily: "monospace"}}>Ver tutorial</Link>
         </div>
       </div>
       <div className="bg-super-purple">
